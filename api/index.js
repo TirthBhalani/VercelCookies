@@ -18,8 +18,7 @@ app.get("/data", async (req, res) => {
       },
     });
 
-    console.log("Response Data:", response.data);
-    res.send("Check server logs for response data.");
+    res.json(response.headers);
   } catch (error) {
     console.error("Error fetching NSE data:", error.message);
     res.status(500).send("Failed to fetch data.");
